@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SMS Terms &amp; Opt-In · HPC LA</title>
+<meta name="description" content="SMS messaging terms, opt-in procedure, and program disclosures for HPC LA biohacker-os automated health and performance alerts." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #f5f3ee;
+    --ink: #1a1815;
+    --muted: #5a564e;
+    --rule: #d8d3c7;
+    --accent: #c0381b;
+    --paper: #fdfcf8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--ink); font-family: 'Inter Tight', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { padding: 64px 24px 120px; line-height: 1.55; }
+  .container { max-width: 760px; margin: 0 auto; }
+
+  /* Masthead */
+  .mast {
+    display: flex; justify-content: space-between; align-items: baseline;
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 14px; margin-bottom: 48px;
+  }
+  .mast-brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 700; font-size: 22px; letter-spacing: -0.02em;
+  }
+  .mast-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  /* Headline */
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600; font-size: clamp(40px, 6vw, 64px);
+    line-height: 1.02; letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lede {
+    font-size: 19px; color: var(--muted); max-width: 560px; margin-bottom: 56px;
+    font-weight: 400;
+  }
+
+  /* Section */
+  section { margin-bottom: 56px; }
+  h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--muted);
+    padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  h2::before {
+    content: ""; display: inline-block; width: 6px; height: 6px;
+    background: var(--accent); border-radius: 50%;
+  }
+  h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600; font-size: 22px; letter-spacing: -0.01em;
+    margin-bottom: 12px; margin-top: 28px;
+  }
+  h3:first-child { margin-top: 0; }
+  p { margin-bottom: 16px; font-size: 16px; }
+  p:last-child { margin-bottom: 0; }
+  strong { font-weight: 600; color: var(--ink); }
+  a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { background: var(--accent); color: var(--paper); text-decoration: none; }
+
+  /* Required disclosures block */
+  .disclosures {
+    background: var(--paper); border: 1.5px solid var(--ink);
+    padding: 32px;
+    position: relative;
+  }
+  .disclosures::before {
+    content: "REQUIRED DISCLOSURES";
+    position: absolute; top: -10px; left: 24px;
+    background: var(--bg); padding: 0 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.16em; color: var(--ink);
+  }
+  .disc-row {
+    display: grid; grid-template-columns: 160px 1fr; gap: 24px;
+    padding: 14px 0; border-bottom: 1px dotted var(--rule);
+  }
+  .disc-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .disc-row:first-child { padding-top: 0; }
+  .disc-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); padding-top: 2px;
+  }
+  .disc-value { font-size: 15px; }
+  .disc-value code {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--bg); padding: 2px 6px; font-size: 13px;
+    border: 1px solid var(--rule);
+  }
+
+  /* Opt-in statement: the legally critical paragraph */
+  .opt-in-statement {
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    background: var(--paper);
+    font-family: 'Fraunces', serif;
+    font-style: italic; font-size: 18px; line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .opt-in-statement strong { font-style: normal; font-family: 'Inter Tight', sans-serif; }
+
+  /* Sample messages */
+  .samples { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+  .sample {
+    background: var(--paper); border: 1px solid var(--rule);
+    padding: 14px 18px;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    line-height: 1.6;
+    position: relative;
+  }
+  .sample::before {
+    content: "SMS"; position: absolute; top: 10px; right: 12px;
+    font-size: 9px; color: var(--muted); letter-spacing: 0.12em;
+  }
+
+  ol, ul { padding-left: 22px; margin-bottom: 16px; }
+  li { margin-bottom: 8px; font-size: 16px; }
+
+  /* Footer */
+  footer {
+    margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  footer a { color: var(--muted); }
+
+  @media (max-width: 560px) {
+    body { padding: 40px 20px 80px; }
+    .disc-row { grid-template-columns: 1fr; gap: 4px; }
+    .disclosures { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="mast">
+    <div class="mast-brand">HPC LA</div>
+    <div class="mast-meta">SMS Program · v1.0</div>
+  </header>
+
+  <h1>SMS terms &amp; <em>opt-in.</em></h1>
+  <p class="lede">
+    HPC LA operates an automated personal-health messaging program known as
+    <strong>biohacker-os</strong>. This page describes the messaging program,
+    how a recipient consents to receive messages, and the disclosures required
+    under A2P 10DLC compliance.
+  </p>
+
+  <section>
+    <h2>Program description</h2>
+    <p>
+      <strong>biohacker-os</strong> is a personal automated health-optimization
+      system operated by HPC LA. It sends SMS notifications to the program
+      owner's mobile phone containing biometric alerts, daily protocol
+      reminders, scheduled supplement and training prompts, and sleep
+      preparation cues generated by the system based on data from the owner's
+      own wearables and calendar.
+    </p>
+    <p>
+      The program is operated for a single end recipient (the program owner) at
+      a single registered mobile number. HPC LA does not solicit, accept, or
+      send messages to any third-party phone numbers under this campaign.
+    </p>
+  </section>
+
+  <section>
+    <h2>How a recipient opts in</h2>
+
+    <h3>Method 1 — Direct keyword opt-in via SMS</h3>
+    <p>
+      The recipient initiates messaging by sending the keyword
+      <strong>START</strong> to the program's registered number
+      <strong>(310) 906-2432</strong> from their own mobile device. This
+      explicit act creates a documented record of consent.
+    </p>
+
+    <h3>Method 2 — Written authorization on file</h3>
+    <p>
+      The recipient — who is also the program owner and the registered
+      authorized representative of HPC LA — has provided written
+      authorization to enroll their personal mobile number in the
+      biohacker-os messaging program. This authorization is stored at the HPC
+      LA business address on file with carrier and is available on
+      request.
+    </p>
+
+    <div class="opt-in-statement">
+      "By providing my phone number and sending START to (310) 906-2432, I
+      consent to receive automated SMS messages from HPC LA's biohacker-os
+      program containing biometric alerts and daily protocol reminders.
+      <strong>Message frequency varies. Msg &amp; data rates may apply. Reply
+      HELP for help. Reply STOP to unsubscribe at any time.</strong> Consent
+      is not a condition of any purchase."
+    </div>
+    <p style="font-size: 14px; color: var(--muted);">
+      The statement above is the exact consent language acknowledged by the
+      recipient at enrollment.
+    </p>
+  </section>
+
+  <section>
+    <h2>Required A2P 10DLC disclosures</h2>
+    <div class="disclosures">
+      <div class="disc-row">
+        <div class="disc-label">Brand</div>
+        <div class="disc-value">HPC LA</div>
+      </div>
+      <div class="disc-row">
+        <div class="disc-label">Program name</div>
+        <div class="disc-value">biohacker-os</div>
+      </div>
+      <div class="disc-row">
+        <div class="disc-label">Sending number</div>
+        <div class="disc-value"><code>(310) 906-2432</code></div>
+      </div>
+      <div class="disc-row">
+        <div class="disc-label">Message types</div>
+        <div class="disc-value">
+          Biometric alerts, daily wellness protocol reminders, supplement
+          timing prompts, training and recovery cues, sleep wind-down
+          reminders. Transactional and informational only — no marketing or
+          promotional content.
+        </div>
+      </div>
+      <div class="disc-row">
+        <div class="disc-label">Message frequency</div>
+        <div class="disc-value">
+          Frequency varies based on the recipient's daily biometric data and
+          scheduled events. Typically 5–15 messages per day.
+        </div>
+      </div>
+      <div class="disc-row">
+        <div class="disc-label">Cost</div>
+        <div class="disc-value">Message and data rates may apply.</div>
+      </div>
+      <div class="disc-row">
+        <div class="disc-label">Opt-out</div>
+        <div class="disc-value">
+          Reply <code>STOP</code>, <code>CANCEL</code>, <code>UNSUBSCRIBE</code>,
+          <code>END</code>, or <code>QUIT</code> to any message. The recipient
+          will receive a single confirmation message and no further messages
+          will be sent under this campaign.
+        </div>
+      </div>
+      <div class="disc-row">
+        <div class="disc-label">Help</div>
+        <div class="disc-value">
+          Reply <code>HELP</code> for support. The recipient will receive a
+          reply with HPC LA contact information. You may also email
+          <a href="mailto:support@hpcla.com">support@hpcla.com</a>.
+        </div>
+      </div>
+      <div class="disc-row">
+        <div class="disc-label">Carrier liability</div>
+        <div class="disc-value">
+          Carriers are not liable for delayed or undelivered messages.
+        </div>
+      </div>
+      <div class="disc-row">
+        <div class="disc-label">Data sharing</div>
+        <div class="disc-value">
+          HPC LA does not share, sell, or rent mobile phone numbers, opt-in
+          data, or message content with any third party for marketing or any
+          other purpose. See our <a href="privacy.html">Privacy Policy</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sample messages</h2>
+    <p>
+      The messages below are representative of actual content sent under the
+      biohacker-os campaign. Bracketed fields indicate templated values
+      personalized to the recipient's biometric data at send time.
+    </p>
+    <div class="samples">
+      <div class="sample">
+        [biohacker-os] HRV dropped to [HRV_VALUE] — sympathetic load
+        elevated. Box breathing + ashwagandha now. Reply STOP to opt out.
+      </div>
+      <div class="sample">
+        [biohacker-os] Recovery score [SCORE] — green tier. Tennis at
+        16:00 cleared. Pre-session collagen at 15:00. Reply HELP for support.
+      </div>
+      <div class="sample">
+        [biohacker-os] Sleep window opens in 30 min. Lights out target
+        22:30. Mag glycinate at 21:30. Reply STOP to unsubscribe.
+      </div>
+      <div class="sample">
+        [biohacker-os] You've been opted out of HPC LA SMS messages. No
+        further messages will be sent. Reply START to resume.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact &amp; legal</h2>
+    <p>
+      <strong>HPC LA</strong><br />
+      EIN: 88-2874228<br />
+      Support: <a href="mailto:support@hpcla.com">support@hpcla.com</a><br />
+      Website: <a href="https://hpcla.com">hpcla.com</a>
+    </p>
+    <p>
+      Related: <a href="privacy.html">Privacy Policy</a> ·
+      <a href="terms.html">Terms of Service</a>
+    </p>
+  </section>
+
+  <footer>
+    <div>© 2026 HPC LA · All rights reserved</div>
+    <div>Last updated: May 27, 2026</div>
+  </footer>
+
+</div>
+</body>
+</html>
